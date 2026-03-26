@@ -2,7 +2,7 @@ name: 每日工作记录提醒
 
 on:
   schedule:
-    - cron: '0 1 * * 1-5'
+    - cron: '0 2 * * 0,1-5'
   workflow_dispatch:
 
 jobs:
