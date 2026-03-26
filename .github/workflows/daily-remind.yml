@@ -1,0 +1,42 @@
+name: 每日工作记录提醒
+
+on:
+  schedule:
+    - cron: '0 1 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 发送飞书提醒
+        run: |
+          curl -X POST "${{ secrets.FEISHU_WEBHOOK }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "msg_type": "interactive",
+              "card": {
+                "header": {
+                  "title": { "tag": "plain_text", "content": "📋 工作记录填写提醒" },
+                  "template": "blue"
+                },
+                "elements": [
+                  {
+                    "tag": "div",
+                    "text": {
+                      "tag": "lark_md",
+                      "content": "大家好 👋\n\n今天的**工作记录**还没填哦，请记得填写！\n\n📅 填写内容：今日完成、明日计划、遇到问题、感悟思考"
+                    }
+                  },
+                  {
+                    "tag": "action",
+                    "actions": [{
+                      "tag": "button",
+                      "text": { "tag": "plain_text", "content": "👉 点击填写工作记录" },
+                      "type": "primary",
+                      "url": "https://ornate-sable-95522e.netlify.app"
+                    }]
+                  }
+                ]
+              }
+            }'
