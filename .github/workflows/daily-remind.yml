@@ -25,7 +25,7 @@ jobs:
                     "tag": "div",
                     "text": {
                       "tag": "lark_md",
-                      "content": "Hi 👋\n\n今天的**工作记录**还没填哦，请记得填写！\n\n📅
+                      "content": "Hi 👋\n\n今天的**记忆记录**还没填哦，请记得填写！\n\n📅
                     }
                   },
                   {
