@@ -2,7 +2,7 @@ name: 个人数字记忆系统提醒
 
 on:
   schedule:
-    - cron: '0 8 * * 1-5'
+    - cron: '0 7 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -34,7 +34,7 @@ jobs:
                       "tag": "button",
                       "text": { "tag": "plain_text", "content": "👉 点击填写个人数字记忆系统" },
                       "type": "primary",
-                      "url": "https://memorysystem.congwei970225.workers.dev/"
+                      "url": "https://memory.mizuflow.net/"
                     }]
                   }
                 ]
